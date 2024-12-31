@@ -10,8 +10,14 @@ COPY package*.json ./
 # Install dependencies
 RUN npm install
 
+# Install structured-clone polyfill
+RUN npm install structured-clone
+
 # Copy the rest of the application code
 COPY . .
+
+# Add structured-clone polyfill to the build process
+RUN echo "import 'structured-clone';" >> src/main.js
 
 # Build the application
 RUN npm run build
