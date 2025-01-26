@@ -65,7 +65,8 @@ export default function Footer() {
           ))}
         </div>
         <p className="mt-6 text-center text-sm/6 text-gray-600">
-          &copy; 2024 BaKu metaalbewerking, Inc. All rights reserved.
+          &copy; {new Date().getFullYear()} BaKu metaalbewerking, Inc. All
+          rights reserved.
         </p>
       </div>
     </footer>
