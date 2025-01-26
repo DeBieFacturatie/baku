@@ -36,7 +36,7 @@ const navigation = {
 
 export default function Footer() {
   return (
-    <footer className="bg-white">
+    <footer className="bg-bakublue text-white">
       <div className="mx-auto max-w-7xl overflow-hidden px-6 py-10 sm:py-12 lg:px-8">
         <nav
           aria-label="Footer"
@@ -46,7 +46,7 @@ export default function Footer() {
             <a
               key={item.name}
               href={item.href}
-              className="text-gray-600 hover:text-gray-900"
+              className="hover:bg-white/10 py-2 px-4 rounded"
             >
               {item.name}
             </a>
@@ -57,14 +57,14 @@ export default function Footer() {
             <a
               key={item.name}
               href={item.href}
-              className="text-gray-600 hover:text-gray-800"
+              className="hover:bg-white/10 p-2 rounded-full"
             >
               <span className="sr-only">{item.name}</span>
               <item.icon aria-hidden="true" className="size-6" />
             </a>
           ))}
         </div>
-        <p className="mt-6 text-center text-sm/6 text-gray-600">
+        <p className="mt-6 text-center text-sm/6">
           &copy; {new Date().getFullYear()} BaKu metaalbewerking, Inc. All
           rights reserved.
         </p>

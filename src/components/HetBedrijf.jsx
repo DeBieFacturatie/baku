@@ -35,36 +35,35 @@ export default function Hetbedrijf() {
             </defs>
           </svg>
         </div>
-        <div className="relative mx-auto max-w-7xl py-24 sm:py-32 lg:px-8 lg:py-40">
+        <div className="relative mx-auto max-w-7xl py-16 sm:py-32 lg:px-8 lg:py-40">
           <div className="pl-6 pr-6 md:ml-auto md:w-2/3 md:pl-16 lg:w-1/2 lg:pl-24 lg:pr-0 xl:pl-32">
-            <h2 className="text-base/7 font-semibold text-bakublue">
-              Wij staan voor u klaar
-            </h2>
             <p className="mt-2 text-4xl font-semibold tracking-tight text-white sm:text-5xl">
               Wat kunnen wij voor u betekenen?
             </p>
             <p className="mt-6 text-base/7 text-gray-300">
-              Bij BaKu Metaalbewerking specialiseren we ons in het draaien en
-              frezen van diverse materialen op conventionele machines. Ook
-              zagen, boren, en het brootsen of persen van bussen en assen met
-              onze hydraulische pers behoren tot de mogelijkheden. Voor meer
-              informatie kunt u contact opnemen via{" "}
-              <span className="font-semibold">+31629425926</span> of{" "}
-              <span className="font-semibold">info@bakumetaal.nl</span> – we
-              staan klaar om u snel te helpen.
+              Bij BaKu Metaalbewerking zijn we gespecialiseerd in conventioneel
+              draaien en frezen van diverse materialen. Ook zagen, boren,
+              brootsen en persen van bussen en assen met onze hydraulische pers
+              voeren wij uit. Neem contact op via{" "}
+              <span className="font-semibold text-bakublue">+31629425926</span>{" "}
+              of{" "}
+              <span className="font-semibold text-bakublue">
+                info@bakumetaal.nl
+              </span>{" "}
+              – we helpen u graag snel verder.
             </p>
             <div className="mt-8">
               <a
                 href="tel:+31629425926"
                 className="inline-flex rounded-md bg-white/10 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
               >
-                Bel ons meteen
+                Bel nu
               </a>
             </div>
           </div>
         </div>
       </div>
-      <div className="overflow-hidden bg-white py-32" id="hetbedrijf">
+      <div className="overflow-hidden bg-white py-16 sm:py-32" id="hetbedrijf">
         <div className="mx-auto max-w-7xl px-6 lg:flex lg:px-8">
           <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 lg:mx-0 lg:min-w-full lg:max-w-none lg:flex-none lg:gap-y-8">
             <div className="lg:col-end-1 lg:w-full lg:max-w-lg lg:pb-8">
@@ -88,31 +87,21 @@ export default function Hetbedrijf() {
                 metaalbewerking
               </p>
               <p className="mt-6 text-base/7 text-gray-600">
-                Van jongs af aan heb ik een passie voor techniek. Na de
-                middelbare school volgde ik in 2014 de opleidingen Verspaner en
-                Constructiewerker aan het Koning Willem I College in
-                &apos;s-Hertogenbosch, die ik binnen twee jaar afrondde.
-                Vervolgens voltooide ik bij het SOMA College in Harderwijk de
-                opleidingen Allround Monteur Mobiele Werktuigen en Technicus
-                Mobiele Werktuigen. Met deze diploma&apos;s op zak richtte ik
-                mij volledig op mijn eigen onderneming, BaKu Metaalbewerking,
-                waarmee ik van mijn passie mijn werk heb gemaakt.
+                Sinds mijn jeugd heb ik een passie voor techniek. Na de
+                middelbare school rondde ik in 2014 de opleidingen Verspaner en
+                Constructiewerker aan het Koning Willem I College in twee jaar
+                af. Daarna behaalde ik bij het SOMA College de diploma’s
+                Allround Monteur en Technicus Mobiele Werktuigen. Met deze
+                kennis startte ik mijn eigen onderneming, BaKu Metaalbewerking,
+                en maakte ik van mijn passie mijn beroep.
               </p>
-              {/* <div className="mt-10 flex">
-                <a
-                  href="#"
-                  className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                >
-                  Join our team <span aria-hidden="true">&rarr;</span>
-                </a>
-              </div> */}
             </div>
             <div className="flex flex-wrap items-start justify-end gap-6 sm:gap-8 lg:contents">
               <div className="w-0 flex-auto lg:ml-auto lg:w-auto lg:flex-none lg:self-end">
                 <img
                   alt=""
                   src={draaien}
-                  className="aspect-[7/5] w-[37rem] max-w-none rounded-2xl bg-gray-50 object-cover shadow-lg"
+                  className="aspect-[7/5] w-[37rem] max-w-none rounded bg-gray-50 object-cover shadow-lg"
                 />
               </div>
               <div className="contents lg:col-span-2 lg:col-end-2 lg:ml-auto lg:flex lg:w-[37rem] lg:items-start lg:justify-end lg:gap-x-8">
@@ -120,21 +109,21 @@ export default function Hetbedrijf() {
                   <img
                     alt=""
                     src={bart}
-                    className="aspect-[4/3] w-[24rem] max-w-none flex-none rounded-2xl bg-gray-50 object-cover shadow-lg"
+                    className="aspect-[4/3] w-[24rem] max-w-none flex-none rounded bg-gray-50 object-cover shadow-lg"
                   />
                 </div>
                 <div className="flex w-96 flex-auto justify-end lg:w-auto lg:flex-none">
                   <img
                     alt=""
                     src={werkplaats}
-                    className="aspect-[7/5] w-[37rem] max-w-none flex-none rounded-2xl bg-gray-50 object-cover shadow-lg"
+                    className="aspect-[7/5] w-[37rem] max-w-none flex-none rounded bg-gray-50 object-cover shadow-lg"
                   />
                 </div>
                 <div className="hidden sm:block sm:w-0 sm:flex-auto lg:w-auto lg:flex-none">
                   <img
                     alt=""
                     src={draad}
-                    className="aspect-[4/3] w-[24rem] max-w-none rounded-2xl bg-gray-50 object-cover shadow-lg"
+                    className="aspect-[4/3] w-[24rem] max-w-none rounded bg-gray-50 object-cover shadow-lg"
                   />
                 </div>
               </div>

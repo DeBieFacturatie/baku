@@ -128,10 +128,11 @@ export default function Hero() {
                     in draaien en frezen van metaal.
                   </h1>
                   <p className="mt-8 text-lg text-gray-500 sm:max-w-md sm:text-lg/8 lg:max-w-none">
-                    De kern van ons werk bestaat uit het draaien en frezen van
-                    diverse materialen op conventionele machines. Daarnaast
-                    behoren ook zagen, boren, brootsen en persen tot onze
-                    specialisaties. Geen uitdaging is ons te groot.
+                    Met onze Style 510 CNC-draaibank leveren we precisiewerk van
+                    hoog niveau. Daarnaast zijn we gespecialiseerd in
+                    conventioneel draaien, frezen, zagen, boren, brootsen en
+                    persen van diverse materialen. Geen uitdaging is ons te
+                    groot.
                   </p>
                   <div className="mt-10 flex items-center gap-x-6">
                     <a
@@ -164,51 +165,51 @@ export default function Hero() {
                     </a>
                   </div>
                 </div>
-                <div className="mt-14 flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0">
-                  <div className="ml-auto w-44 flex-none space-y-8 pt-32 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-none xl:pt-80">
+                <div className="mt-14 flex justify-end gap-4 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0">
+                  <div className="ml-auto w-44 flex-none space-y-4 pt-32 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-none xl:pt-80">
                     <div className="relative">
                       <img
                         alt="werkplaats"
                         src={werkplaats}
-                        className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
+                        className="aspect-[2/3] w-full rounded bg-gray-900/5 object-cover shadow-lg"
                       />
-                      <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
+                      <div className="pointer-events-none absolute inset-0 rounded ring-1 ring-inset ring-gray-900/10" />
                     </div>
                   </div>
-                  <div className="mr-auto w-44 flex-none space-y-8 sm:mr-0 sm:pt-52 lg:pt-36">
+                  <div className="mr-auto w-44 flex-none space-y-4 sm:mr-0 sm:pt-52 lg:pt-36">
                     <div className="relative">
                       <img
                         alt="technische tekening"
                         src={draaien}
-                        className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
+                        className="aspect-[2/3] w-full rounded bg-gray-900/5 object-cover shadow-lg"
                       />
-                      <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
+                      <div className="pointer-events-none absolute inset-0 rounded ring-1 ring-inset ring-gray-900/10" />
                     </div>
                     <div className="relative">
                       <img
                         alt="lassen"
                         src={lassen}
-                        className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
+                        className="aspect-[2/3] w-full rounded bg-gray-900/5 object-cover shadow-lg"
                       />
-                      <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
+                      <div className="pointer-events-none absolute inset-0 rounded ring-1 ring-inset ring-gray-900/10" />
                     </div>
                   </div>
-                  <div className="w-44 flex-none space-y-8 pt-32 sm:pt-0">
+                  <div className="w-44 flex-none space-y-4 pt-32 sm:pt-0">
                     <div className="relative">
                       <img
                         alt="draaien"
                         src={technischetekening}
-                        className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
+                        className="aspect-[2/3] w-full rounded bg-gray-900/5 object-cover shadow-lg"
                       />
-                      <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
+                      <div className="pointer-events-none absolute inset-0 rounded ring-1 ring-inset ring-gray-900/10" />
                     </div>
                     <div className="relative">
                       <img
                         alt="frezen"
                         src={frezen}
-                        className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
+                        className="aspect-[2/3] w-full rounded bg-gray-900/5 object-cover shadow-lg"
                       />
-                      <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
+                      <div className="pointer-events-none absolute inset-0 rounded ring-1 ring-inset ring-gray-900/10" />
                     </div>
                   </div>
                 </div>

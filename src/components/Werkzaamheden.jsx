@@ -41,7 +41,7 @@ const features = [
 
 export default function Werkzaamheden() {
   return (
-    <div className="bg-white py-24 sm:py-32" id="werkzaamheden">
+    <div className="bg-white py-0 pb-16 sm:py-32" id="werkzaamheden">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
           <h2 className="text-base/7 font-semibold text-bakublue">
@@ -51,9 +51,9 @@ export default function Werkzaamheden() {
             Meester in metaalbewerking.
           </p>
           <p className="mt-6 text-lg/8 text-gray-600">
-            Wij specialiseren ons in draaien en frezen van diverse materialen op
-            conventionele machines. Ook zagen, boren, brootsen en persen van
-            bussen en assen voeren wij vakkundig uit.
+            Van draaien en frezen tot boren, zagen, brootsen en draad tappen –
+            bij ons krijgt u vakkundige en veelzijdige metaalbewerking voor elk
+            project.
           </p>
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
