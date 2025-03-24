@@ -3,62 +3,69 @@ import bart from "../assets/bart.png";
 import werkplaats from "../assets/werkplaats.png";
 import draaien from "../assets/draaien.png";
 import draad from "../assets/draad.png";
+import mainAchtergrond from "../assets/main-achtergrond.png";
 
 export default function Hetbedrijf() {
   return (
     <>
-      <div className="relative bg-gray-900">
-        <div className="relative h-80 overflow-hidden bg-bakublue md:absolute md:left-0 md:h-full md:w-1/3 lg:w-1/2">
-          <img alt="" src={frezen} className="size-full object-cover" />
-          <svg
-            viewBox="0 0 926 676"
-            aria-hidden="true"
-            className="absolute -bottom-24 left-24 w-[57.875rem] transform-gpu blur-[118px]"
-          >
-            <path
-              d="m254.325 516.708-90.89 158.331L0 436.427l254.325 80.281 163.691-285.15c1.048 131.759 36.144 345.144 168.149 144.613C751.171 125.508 707.17-93.823 826.603 41.15c95.546 107.978 104.766 294.048 97.432 373.585L685.481 297.694l16.974 360.474-448.13-141.46Z"
-              fill="url(#60c3c621-93e0-4a09-a0e6-4c228a0116d8)"
-              fillOpacity=".4"
-            />
-            <defs>
-              <linearGradient
-                id="60c3c621-93e0-4a09-a0e6-4c228a0116d8"
-                x1="926.392"
-                x2="-109.635"
-                y1=".176"
-                y2="321.024"
-                gradientUnits="userSpaceOnUse"
+      <div className="relative bg-white py-16">
+        <div
+          aria-hidden="true"
+          className="absolute inset-x-0 top-0 hidden h-1/2 bg-gray-50 lg:block"
+        />
+        <div className="mx-auto max-w-7xl bg-bakublue lg:bg-transparent lg:px-8">
+          <div className="lg:grid lg:grid-cols-12">
+            <div className="relative z-10 lg:col-span-4 lg:col-start-1 lg:row-start-1 lg:bg-transparent lg:py-16">
+              <div
+                aria-hidden="true"
+                className="absolute inset-x-0 h-1/2 bg-gray-50 lg:hidden"
+              />
+              <div className="mx-auto max-w-md px-6 sm:max-w-3xl lg:max-w-none lg:p-0">
+                <img
+                  alt=""
+                  src={frezen}
+                  className="relative aspect-[10/6] w-full rounded-3xl object-cover shadow-2xl sm:aspect-[2/1] lg:aspect-square"
+                />
+              </div>
+            </div>
+
+            <div className="relative bg-bakublue lg:col-span-10 lg:col-start-3 lg:row-start-1 lg:grid lg:grid-cols-10 lg:items-center lg:rounded-3xl">
+              <div
+                aria-hidden="true"
+                className="absolute inset-0 hidden overflow-hidden rounded-3xl lg:block"
               >
-                <stop stopColor="#065495" />
-                <stop offset={1} stopColor="#48759c" />
-              </linearGradient>
-            </defs>
-          </svg>
-        </div>
-        <div className="relative mx-auto max-w-7xl py-16 sm:py-32 lg:px-8 lg:py-40">
-          <div className="pl-6 pr-6 md:ml-auto md:w-2/3 md:pl-16 lg:w-1/2 lg:pl-24 lg:pr-0 xl:pl-32">
-            <p className="mt-2 text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-              Wat kunnen wij voor u betekenen?
-            </p>
-            <p className="mt-6 text-base/7 text-gray-300">
-              Bij BaKu Metaalbewerking zijn we gespecialiseerd in conventioneel
-              draaien en frezen van diverse materialen. Ook zagen, boren,
-              brootsen en persen van bussen en assen met onze hydraulische pers
-              voeren wij uit. Neem contact op via{" "}
-              <span className="font-semibold text-bakublue">+31629425926</span>{" "}
-              of{" "}
-              <span className="font-semibold text-bakublue">
-                info@bakumetaal.nl
-              </span>{" "}
-              – we helpen u graag snel verder.
-            </p>
-            <div className="mt-8">
-              <a
-                href="tel:+31629425926"
-                className="inline-flex rounded-md bg-white/10 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-              >
-                Bel nu
-              </a>
+                <div className="absolute inset-0 overflow-hidden">
+                  <img
+                    src={mainAchtergrond}
+                    alt=""
+                    className="h-full w-full object-cover object-center"
+                    style={{
+                      filter: "brightness(0) invert(1) opacity(0.1)",
+                      mixBlendMode: "overlay",
+                    }}
+                  />
+                </div>
+              </div>
+              <div className="relative mx-auto max-w-md space-y-6 px-6 py-12 sm:max-w-3xl sm:py-16 lg:col-span-6 lg:col-start-4 lg:max-w-none lg:p-0">
+                <h2
+                  id="join-heading"
+                  className="text-3xl font-bold tracking-tight text-white"
+                >
+                  Wat kunnen wij voor u betekenen?
+                </h2>
+                <p className="text-lg text-white">
+                  Neem contact op via{" "}
+                  <span className="font-bold">+31629425926</span> of{" "}
+                  <span className="font-bold">info@bakumetaal.nl</span> – we
+                  helpen u graag snel verder.
+                </p>
+                <a
+                  href="#"
+                  className="block w-full rounded-md border border-transparent bg-white px-5 py-3 text-center text-base font-medium text-bakublue shadow-md hover:bg-gray-50 sm:inline-block sm:w-auto"
+                >
+                  Bel nu
+                </a>
+              </div>
             </div>
           </div>
         </div>
