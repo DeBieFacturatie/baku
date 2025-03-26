@@ -8,79 +8,63 @@ import mainAchtergrond from "../assets/main-achtergrond.png";
 export default function Hetbedrijf() {
   return (
     <>
-      <div className="relative bg-white py-16">
-        <div
-          aria-hidden="true"
-          className="absolute inset-x-0 top-0 hidden h-1/2 bg-gray-50 lg:block"
-        />
-        <div className="mx-auto max-w-7xl bg-bakublue lg:bg-transparent lg:px-8">
-          <div className="lg:grid lg:grid-cols-12">
-            <div className="relative z-10 lg:col-span-4 lg:col-start-1 lg:row-start-1 lg:bg-transparent lg:py-16">
-              <div
-                aria-hidden="true"
-                className="absolute inset-x-0 h-1/2 bg-gray-50 lg:hidden"
-              />
-              <div className="mx-auto max-w-md px-6 sm:max-w-3xl lg:max-w-none lg:p-0">
-                <img
-                  alt=""
-                  src={frezen}
-                  className="relative aspect-[10/6] w-full rounded-3xl object-cover shadow-2xl sm:aspect-[2/1] lg:aspect-square"
-                />
-              </div>
-            </div>
-
-            <div className="relative bg-bakublue lg:col-span-10 lg:col-start-3 lg:row-start-1 lg:grid lg:grid-cols-10 lg:items-center lg:rounded-3xl">
-              <div
-                aria-hidden="true"
-                className="absolute inset-0 hidden overflow-hidden rounded-3xl lg:block"
-              >
-                <div className="absolute inset-0 overflow-hidden">
-                  <img
-                    src={mainAchtergrond}
-                    alt=""
-                    className="h-full w-full object-cover object-center"
-                    style={{
-                      filter: "brightness(0) invert(1) opacity(0.1)",
-                      mixBlendMode: "overlay",
-                    }}
-                  />
-                </div>
-              </div>
-              <div className="relative mx-auto max-w-md space-y-6 px-6 py-12 sm:max-w-3xl sm:py-16 lg:col-span-6 lg:col-start-4 lg:max-w-none lg:p-0">
-                <h2
-                  id="join-heading"
-                  className="text-3xl font-bold tracking-tight text-white"
-                >
-                  Wat kunnen wij voor u betekenen?
-                </h2>
-                <p className="text-lg text-white">
-                  Neem contact op via{" "}
-                  <span className="font-bold">+31629425926</span> of{" "}
-                  <span className="font-bold">info@bakumetaal.nl</span> – we
-                  helpen u graag snel verder.
-                </p>
-                <a
-                  href="#"
-                  className="block w-full rounded-md border border-transparent bg-white px-5 py-3 text-center text-base font-medium text-bakublue shadow-md hover:bg-gray-50 sm:inline-block sm:w-auto"
-                >
-                  Bel nu
-                </a>
-              </div>
-            </div>
+      <div className="relative overflow-hidden">
+        <div aria-hidden="true" className="absolute inset-0">
+          <div className="absolute inset-0 mx-auto max-w-7xl overflow-hidden xl:px-8">
+            <img
+              alt=""
+              src={werkplaats}
+              className="size-full object-cover xl:rounded-lg bg-gray-100 shadow-sm"
+            />
           </div>
+          <div className="absolute inset-0 bg-white/65" />
+          <div className="absolute inset-0 bg-gradient-to-t from-white via-white/25" />
         </div>
+
+        <section
+          aria-labelledby="sale-heading"
+          className="relative mx-auto flex max-w-7xl flex-col items-center px-4 pt-32 text-center sm:px-6 lg:px-8"
+        >
+          <div className="mx-auto max-w-2xl lg:max-w-none">
+            <h2
+              id="sale-heading"
+              className="text-4xl font-bold tracking-tight text-bakublue sm:text-5xl lg:text-6xl"
+            >
+              Wat kunnen wij voor u betekenen?
+            </h2>
+            <p className="mx-auto mt-4 text-base text-gray-600">
+              Neem contact op via +31629425926 of info@bakumetaal.nl – we helpen
+              u graag snel verder.
+            </p>
+            <a
+              href="#"
+              className="mt-6 inline-block w-full rounded-md border border-transparent bg-bakublue px-8 py-3 font-medium text-white hover:bg-bakubluehover sm:w-auto"
+            >
+              Bel nu
+            </a>
+          </div>
+        </section>
       </div>
-      <div className="overflow-hidden bg-white py-16 sm:py-32" id="hetbedrijf">
-        <div className="mx-auto max-w-7xl px-6 lg:flex lg:px-8">
-          <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 lg:mx-0 lg:min-w-full lg:max-w-none lg:flex-none lg:gap-y-8">
-            <div className="lg:col-end-1 lg:w-full lg:max-w-lg lg:pb-8">
-              <h2 className="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
-                Het bedrijf.
-              </h2>
-              {/* <p className="mt-6 text-xl/8 text-gray-600">
+      <div className="overflow-hidden bg-white py-24 sm:py-32">
+        <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
+          <div className="max-w-4xl">
+            <h2 className="text-3xl font-bold text-bakublue sm:text-4xl">
+              Het bedrijf
+            </h2>
+            {/* <p className="mt-4 text-gray-500">
+              Wij zijn gespecialiseerd in het draaien en frezen van diverse
+              materialen, zowel op conventionele machines als met onze moderne
+              CNC-draaibank. Daarnaast voeren we ook zaag-, boor-, broots- en
+              perswerk uit. Dankzij deze mix van technieken kunnen we flexibel
+              en nauwkeurig inspelen op uiteenlopende opdrachten.
+            </p> */}
+          </div>
+          <section className="mt-20 grid grid-cols-1 lg:grid-cols-2 lg:gap-x-8 lg:gap-y-16">
+            <div className="lg:pr-8">
+              <h2 className="text-2xl font-semibold text-bakublue my-3">
                 Wie of wat is BaKu metaalbewerking?
-              </p>
-              <p className="mt-6 text-base/7 text-gray-600">
+              </h2>
+              <p className="text-gray-500 my-3">
                 BaKu Metaalbewerking, opgericht op 1 januari 2022, combineert
                 een levenslange passie voor metaalbewerking met vakmanschap en
                 ervaring. We bewerken materialen zoals staal, rvs, aluminium,
@@ -88,12 +72,12 @@ export default function Hetbedrijf() {
                 draaibanken en hebben inmiddels honderden producten op maat
                 geleverd. Klantgerichtheid en snelle levering staan centraal in
                 ons werk.
-              </p> */}
-              <p className="mt-6 text-xl/8 text-gray-600">
+              </p>
+              <h2 className="text-2xl font-semibold text-bakublue my-3">
                 Even voorstellen, Bart van Kuijk, eigenaar van BaKu
                 metaalbewerking
-              </p>
-              <p className="mt-6 text-base/7 text-gray-600">
+              </h2>
+              <p className="my-3 text-gray-500">
                 Sinds mijn jeugd heb ik een passie voor techniek. Na de
                 middelbare school rondde ik in 2014 de opleidingen Verspaner en
                 Constructiewerker aan het Koning Willem I College in twee jaar
@@ -103,39 +87,39 @@ export default function Hetbedrijf() {
                 en maakte ik van mijn passie mijn beroep.
               </p>
             </div>
-            <div className="flex flex-wrap items-start justify-end gap-6 sm:gap-8 lg:contents">
-              <div className="w-0 flex-auto lg:ml-auto lg:w-auto lg:flex-none lg:self-end">
-                <img
-                  alt=""
-                  src={draaien}
-                  className="aspect-[7/5] w-[37rem] max-w-none rounded bg-gray-50 object-cover shadow-lg"
-                />
-              </div>
-              <div className="contents lg:col-span-2 lg:col-end-2 lg:ml-auto lg:flex lg:w-[37rem] lg:items-start lg:justify-end lg:gap-x-8">
-                <div className="order-first flex w-64 flex-none justify-end self-end lg:w-auto">
+            <div className="pt-16 lg:row-span-2 lg:-mr-16 xl:mr-auto">
+              <div className="-mx-8 grid grid-cols-2 gap-4 sm:-mx-16 sm:grid-cols-4 lg:mx-0 lg:grid-cols-2 lg:gap-4 xl:gap-8">
+                <div className="aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10">
+                  <img
+                    alt=""
+                    src={draaien}
+                    className="block size-full object-cover"
+                  />
+                </div>
+                <div className="-mt-8 aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10 lg:-mt-40">
                   <img
                     alt=""
                     src={bart}
-                    className="aspect-[4/3] w-[24rem] max-w-none flex-none rounded bg-gray-50 object-cover shadow-lg"
+                    className="block size-full object-cover"
                   />
                 </div>
-                <div className="flex w-96 flex-auto justify-end lg:w-auto lg:flex-none">
+                <div className="aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10">
                   <img
                     alt=""
                     src={werkplaats}
-                    className="aspect-[7/5] w-[37rem] max-w-none flex-none rounded bg-gray-50 object-cover shadow-lg"
+                    className="block size-full object-cover"
                   />
                 </div>
-                <div className="hidden sm:block sm:w-0 sm:flex-auto lg:w-auto lg:flex-none">
+                <div className="-mt-8 aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-black/10 lg:-mt-40">
                   <img
                     alt=""
                     src={draad}
-                    className="aspect-[4/3] w-[24rem] max-w-none rounded bg-gray-50 object-cover shadow-lg"
+                    className="block size-full object-cover"
                   />
                 </div>
               </div>
             </div>
-          </div>
+          </section>
         </div>
       </div>
     </>

@@ -41,10 +41,10 @@ const werkzaamheden = [
 export default function Werkzaamheden() {
   return (
     <section aria-labelledby="werkzaamheden-heading" id="werkzaamheden">
-      <div className="bg-white">
+      <div className="relative">
         <div className="mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-16 gap-y-16 px-4 py-28 sm:px-6 lg:max-w-7xl lg:grid-cols-2 lg:px-8">
           <div>
-            <h2 className="text-3xl font-bold tracking-tight text-bakublue sm:text-4xl">
+            <h2 className="text-3xl font-bold text-bakublue sm:text-4xl">
               Onze werkzaamheden
             </h2>
             <p className="mt-4 text-gray-500">
