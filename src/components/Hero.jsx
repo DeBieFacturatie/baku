@@ -3,6 +3,7 @@ import frezen from "../assets/frezen.png";
 import mainachtergrond from "../assets/main-achtergrond.png";
 import mainachtergrondgroot from "../assets/main-achtergrond-groot.png";
 import headerimage from "../assets/header-image.png";
+import { PhoneCall, Shuffle, Target } from "@phosphor-icons/react";
 import {
   Dialog,
   DialogBackdrop,
@@ -22,22 +23,19 @@ const navigation = {
 const usps = [
   {
     naam: "Korte lijntjes",
-    imageSrc:
-      "https://tailwindcss.com/plus-assets/img/ecommerce/icons/icon-shipping-simple.svg",
+    imageSrc: <PhoneCall size={48} color="#065495" />,
     beschrijving:
       "We zijn een klein bedrijf, dus je hebt altijd direct contact met de mensen die aan jouw opdracht werken.",
   },
   {
     naam: "Kwaliteit",
-    imageSrc:
-      "https://tailwindcss.com/plus-assets/img/ecommerce/icons/icon-warranty-simple.svg",
+    imageSrc: <Target size={48} color="#065495" />,
     beschrijving:
       "We werken met de grootste zorg aan jouw opdracht, zodat je altijd verzekerd bent van topkwaliteit.",
   },
   {
     naam: "Flexibiliteit",
-    imageSrc:
-      "https://tailwindcss.com/plus-assets/img/ecommerce/icons/icon-exchange-simple.svg",
+    imageSrc: <Shuffle size={48} color="#065495" />,
     beschrijving:
       "We denken graag met je mee en passen ons aanbod aan op jouw wensen en behoeften.",
   },
@@ -267,7 +265,8 @@ export default function Hero() {
                 {usps.map((usp) => (
                   <div key={usp.naam} className="sm:flex lg:block">
                     <div className="sm:shrink-0">
-                      <img alt="" src={usp.imageSrc} className="size-16" />
+                      <img alt="" src={usp.imageSrc} />
+                      {usp.imageSrc}
                     </div>
                     <div className="mt-4 sm:ml-6 sm:mt-0 lg:ml-0 lg:mt-6">
                       <h3 className="text-base text-gray-900 font-medium">
