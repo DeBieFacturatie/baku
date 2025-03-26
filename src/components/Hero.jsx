@@ -1,6 +1,7 @@
 import { useState } from "react";
 import frezen from "../assets/frezen.png";
 import mainachtergrond from "../assets/main-achtergrond.png";
+import mainachtergrondgroot from "../assets/main-achtergrond-groot.png";
 import headerimage from "../assets/header-image.png";
 import {
   Dialog,
@@ -66,43 +67,25 @@ export default function Hero() {
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(false)}
-                className="-m-2 inline-flex items-center justify-center rounded-md p-2 text-gray-400"
+                className="-m-2 inline-flex items-center justify-center rounded-lg p-2 text-gray-400"
               >
                 <span className="sr-only">Close menu</span>
                 <XMarkIcon aria-hidden="true" className="size-6" />
               </button>
             </div>
 
-            <div className="space-y-6 border-t border-gray-200 px-4 py-6">
+            <div className="space-y-6 border-gray-200 px-4 py-6">
               {navigation.pages.map((page) => (
                 <div key={page.naam} className="flow-root">
                   <a
                     href={page.href}
                     className="-m-2 block p-2 font-medium text-gray-900"
+                    onClick={() => setMobileMenuOpen(false)}
                   >
                     {page.naam}
                   </a>
                 </div>
               ))}
-            </div>
-
-            <div className="space-y-6 border-t border-gray-200 px-4 py-6">
-              <div className="flow-root">
-                <a
-                  href="#"
-                  className="-m-2 block p-2 font-medium text-gray-900"
-                >
-                  Create an account
-                </a>
-              </div>
-              <div className="flow-root">
-                <a
-                  href="#"
-                  className="-m-2 block p-2 font-medium text-gray-900"
-                >
-                  Sign in
-                </a>
-              </div>
             </div>
           </DialogPanel>
         </div>
@@ -132,12 +115,12 @@ export default function Hero() {
 
                   <div className="hidden h-full lg:flex">
                     <PopoverGroup className="ml-8">
-                      <div className="flex h-full justify-center space-x-8">
+                      <div className="flex h-full justify-center space-x-10">
                         {navigation.pages.map((page) => (
                           <a
                             key={page.naam}
                             href={page.href}
-                            className="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"
+                            className="flex items-center text-base font-medium text-gray-900 hover:text-gray-600"
                           >
                             {page.naam}
                           </a>
@@ -150,14 +133,14 @@ export default function Hero() {
                     <button
                       type="button"
                       onClick={() => setMobileMenuOpen(true)}
-                      className="-ml-2 rounded-md bg-white p-2 text-gray-400"
+                      className="-ml-2 rounded-lg bg-white p-2 text-gray-400"
                     >
                       <span className="sr-only">Open menu</span>
                       <Bars3Icon aria-hidden="true" className="size-6" />
                     </button>
                   </div>
 
-                  <a href="#" className="lg:hidden">
+                  <a href="/" className="lg:hidden">
                     <span className="sr-only">BaKu metaalbewerking</span>
                     <img alt="" src={headerimage} className="h-8 w-auto" />
                   </a>
@@ -168,7 +151,7 @@ export default function Hero() {
                         <div className="flex">
                           <a
                             href="https://www.facebook.com/bakumetaalbewerking/"
-                            className="-m-2 p-2 text-gray-400 hover:text-gray-500"
+                            className="-m-2 p-2 text-gray-900 hover:text-gray-500"
                           >
                             <span className="sr-only">Facebook</span>
                             <svg
@@ -185,13 +168,13 @@ export default function Hero() {
 
                         <span
                           aria-hidden="true"
-                          className="mx-4 h-6 w-px bg-gray-200 lg:mx-6"
+                          className="mx-4 h-6 w-px bg-gray-400 lg:mx-6"
                         />
 
                         <div className="flex">
                           <a
                             href="https://www.instagram.com/bakumetaalbewerking/"
-                            className="-m-2 p-2 text-gray-400 hover:text-gray-500"
+                            className="-m-2 p-2 text-gray-900 hover:text-gray-500"
                           >
                             <span className="sr-only">Instagram</span>
                             <svg
@@ -217,7 +200,20 @@ export default function Hero() {
       <main>
         <div
           aria-hidden="true"
-          className="absolute h-[90%] w-full"
+          className="absolute h-[200%] w-full lg:hidden"
+          style={{
+            backgroundImage: `linear-gradient(to bottom, 
+                rgba(255,255,255,0) 50%, 
+                rgba(255,255,255,1) 100%), 
+                  url(${mainachtergrondgroot})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            opacity: 0.45,
+          }}
+        />
+        <div
+          aria-hidden="true"
+          className="absolute h-[90%] w-full hidden lg:block"
           style={{
             backgroundImage: `linear-gradient(to bottom, 
                 rgba(255,255,255,0) 50%, 
@@ -229,7 +225,7 @@ export default function Hero() {
           }}
         />
         <div className="relative">
-          <div className="mx-auto max-w-7xl py-24 sm:px-2 lg:px-4">
+          <div className="mx-auto max-w-7xl pt-16 pb-24 lg:py-24 sm:px-2 lg:px-4">
             <div className="mx-auto max-w-2xl px-4 lg:max-w-none">
               <div className="grid grid-cols-1 items-center gap-x-16 gap-y-10 lg:grid-cols-2">
                 <div>
@@ -258,7 +254,7 @@ export default function Hero() {
                 <img
                   alt=""
                   src={frezen}
-                  className="aspect-[3/2] w-full rounded-lg bg-gray-100 object-cover shadow-sm opacity-90"
+                  className="aspect-[3/2] w-full rounded-lg bg-gray-100 object-cover opacity-90 shadow-xl outline outline-1 -outline-offset-1 outline-black/10"
                   style={{
                     filter: "brightness(0.95) contrast(0.95)",
                     maxHeight: "400px",
@@ -267,17 +263,17 @@ export default function Hero() {
                   }}
                 />
               </div>
-              <div className="mt-32 grid grid-cols-1 gap-x-16 gap-y-10 lg:grid-cols-3">
+              <div className="mt-16 md:mt-24 lg:mt-32 grid grid-cols-1 gap-x-16 gap-y-10 lg:grid-cols-3">
                 {usps.map((usp) => (
                   <div key={usp.naam} className="sm:flex lg:block">
                     <div className="sm:shrink-0">
                       <img alt="" src={usp.imageSrc} className="size-16" />
                     </div>
                     <div className="mt-4 sm:ml-6 sm:mt-0 lg:ml-0 lg:mt-6">
-                      <h3 className="text-sm font-medium text-gray-900">
+                      <h3 className="text-base text-gray-900 font-medium">
                         {usp.naam}
                       </h3>
-                      <p className="mt-2 text-sm text-gray-500">
+                      <p className="mt-2 text-base text-gray-600">
                         {usp.beschrijving}
                       </p>
                     </div>

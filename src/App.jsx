@@ -1,5 +1,4 @@
 import Contact from "./components/Contact";
-import Cta from "./components/cta";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import Hetbedrijf from "./components/HetBedrijf";
@@ -11,7 +10,6 @@ function App() {
       <Hero />
       <Werkzaamheden />
       <Hetbedrijf />
-      <Cta />
       <Contact />
       <Footer />
     </>
