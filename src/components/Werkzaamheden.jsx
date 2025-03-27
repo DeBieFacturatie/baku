@@ -57,7 +57,7 @@ export default function Werkzaamheden() {
                 <span className="relative">Onze werkzaamheden</span>
               </span>
             </h2>
-            <p className="mt-4 text-base text-gray-600">
+            <p className="mt-4 text-lg text-gray-900 font-light">
               Wij zijn gespecialiseerd in het draaien en frezen van diverse
               materialen, zowel op conventionele machines als met onze moderne
               CNC-draaibank. Daarnaast voeren we ook zaag-, boor-, broots- en
@@ -68,10 +68,10 @@ export default function Werkzaamheden() {
             <dl className="mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">
               {werkzaamheden.map((werk) => (
                 <div key={werk.naam} className="border-t border-gray-200 pt-4">
-                  <dt className="font-semibold text-bakublue text-base">
+                  <dt className="text-bakublue text-lg font-medium tracking-tight">
                     {werk.naam}
                   </dt>
-                  <dd className="mt-2 text-base text-gray-600">
+                  <dd className="mt-2 text-base text-gray-900 font-light">
                     {werk.beschrijving}
                   </dd>
                 </div>

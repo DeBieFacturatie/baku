@@ -1,9 +1,9 @@
 import { useState } from "react";
-import frezen from "../assets/frezen.png";
+import frezenzw from "../assets/frezen-zw.png";
 import mainachtergrond from "../assets/main-achtergrond.png";
 import mainachtergrondgroot from "../assets/main-achtergrond-groot.png";
 import headerimage from "../assets/header-image.png";
-import { PhoneCall, Shuffle, Target } from "@phosphor-icons/react";
+import { ChatsCircle, Lightbulb, Target } from "@phosphor-icons/react";
 import {
   Dialog,
   DialogBackdrop,
@@ -23,7 +23,7 @@ const navigation = {
 const usps = [
   {
     naam: "Korte lijntjes",
-    imageSrc: <PhoneCall size={48} color="#065495" />,
+    imageSrc: <ChatsCircle size={48} color="#065495" />,
     beschrijving:
       "We zijn een klein bedrijf, dus je hebt altijd direct contact met de mensen die aan jouw opdracht werken.",
   },
@@ -35,7 +35,7 @@ const usps = [
   },
   {
     naam: "Flexibiliteit",
-    imageSrc: <Shuffle size={48} color="#065495" />,
+    imageSrc: <Lightbulb size={48} color="#065495" />,
     beschrijving:
       "We denken graag met je mee en passen ons aanbod aan op jouw wensen en behoeften.",
   },
@@ -112,13 +112,13 @@ export default function Hero() {
                   </div>
 
                   <div className="hidden h-full lg:flex">
-                    <PopoverGroup className="ml-8">
+                    <PopoverGroup className="ml-10">
                       <div className="flex h-full justify-center space-x-10">
                         {navigation.pages.map((page) => (
                           <a
                             key={page.naam}
                             href={page.href}
-                            className="flex items-center text-base font-medium text-gray-900 hover:text-gray-600"
+                            className="flex items-center text-sm font-medium text-black hover:text-bakublue border-b-2 border-b-transparent hover:border-bakublue hover:border-b-2 px-4 tracking-wide pt-1"
                           >
                             {page.naam}
                           </a>
@@ -219,7 +219,7 @@ export default function Hero() {
                   url(${mainachtergrond})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
-            opacity: 0.4,
+            opacity: 0.3,
           }}
         />
         <div className="relative">
@@ -241,7 +241,7 @@ export default function Hero() {
                     </span>{" "}
                     in draaien en frezen van metaal.
                   </h1>
-                  <p className="mt-4 text-base text-gray-600">
+                  <p className="mt-4 text-lg text-gray-900 font-light">
                     Met onze Style 510 CNC-draaibank leveren we precisiewerk van
                     hoog niveau. Daarnaast zijn we gespecialiseerd in
                     conventioneel draaien, frezen, zagen, boren, brootsen en
@@ -251,10 +251,9 @@ export default function Hero() {
                 </div>
                 <img
                   alt=""
-                  src={frezen}
-                  className="aspect-[3/2] w-full bg-gray-100 object-cove"
+                  src={frezenzw}
+                  className="aspect-[3/2] w-full object-cover transition-all duration-300 ease-in-out filter grayscale hover:grayscale-0"
                   style={{
-                    filter: "brightness(0.95) contrast(0.95)",
                     maxHeight: "400px",
                     objectFit: "cover",
                     objectPosition: "center",
@@ -269,10 +268,10 @@ export default function Hero() {
                       {usp.imageSrc}
                     </div>
                     <div className="mt-4 sm:ml-6 sm:mt-0 lg:ml-0 lg:mt-6">
-                      <h3 className="text-base text-gray-900 font-medium">
+                      <h3 className="text-lg text-gray-900 font-medium tracking-tight">
                         {usp.naam}
                       </h3>
-                      <p className="mt-2 text-base text-gray-600">
+                      <p className="mt-2 text-lg text-gray-900 font-light">
                         {usp.beschrijving}
                       </p>
                     </div>

@@ -2,6 +2,9 @@ import bart from "../assets/bart.png";
 import werkplaats from "../assets/werkplaats.png";
 import draaien from "../assets/draaien.png";
 import draad from "../assets/draad.png";
+import frezenzw from "../assets/frezen-zw.png";
+import bartzw from "../assets/bart-zw.png";
+import werkplaatszw from "../assets/werkplaats-zw.png";
 
 export default function Hetbedrijf() {
   return (
@@ -30,7 +33,7 @@ export default function Hetbedrijf() {
             >
               Wat kunnen wij voor u betekenen?
             </h2>
-            <p className="mx-auto mt-4 text-base text-gray-600">
+            <p className="mx-auto mt-4 text-base text-gray-900">
               Neem contact op via{" "}
               <span className="font-bold">+31629425926</span> of{" "}
               <span className="font-bold">info@bakumetaal.nl</span> – we helpen
@@ -45,10 +48,13 @@ export default function Hetbedrijf() {
           </div>
         </section>
       </div>
-      <div className="overflow-hidden bg-white py-12 lg:py-32" id="hetbedrijf">
-        <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
-          <section className="mt-20 grid grid-cols-1 lg:grid-cols-2 lg:gap-x-8 lg:gap-y-16">
-            <div className="lg:pr-8">
+      <div
+        className="mx-auto max-w-7xl pt-16 pb-24 py-12 lg:py-48"
+        id="hetbedrijf"
+      >
+        <div className="mx-auto max-w-2xl lg:max-w-none">
+          <div className="grid grid-cols-1 items-center gap-x-16 gap-y-10 lg:grid-cols-2">
+            <div>
               <h2 className="text-4xl font-bold tracking-tight md:text-5xl text-left mb-8">
                 <span className="relative whitespace-nowrap text-bakublue">
                   <svg
@@ -62,10 +68,10 @@ export default function Hetbedrijf() {
                   <span className="relative">Het bedrijf</span>
                 </span>
               </h2>
-              <h2 className="text-2xl font-semibold text-bakublue my-3">
+              <h2 className="text-bakublue my-3 text-lg font-medium tracking-tight">
                 Wie of wat is BaKu metaalbewerking?
               </h2>
-              <p className="text-base text-gray-600 my-3">
+              <p className="my-3 text-base text-gray-900 font-light">
                 BaKu Metaalbewerking, opgericht op 1 januari 2022, combineert
                 een levenslange passie voor metaalbewerking met vakmanschap en
                 ervaring. We bewerken materialen zoals staal, rvs, aluminium,
@@ -74,11 +80,11 @@ export default function Hetbedrijf() {
                 geleverd. Klantgerichtheid en snelle levering staan centraal in
                 ons werk.
               </p>
-              <h2 className="text-2xl font-semibold text-bakublue my-3">
+              <h2 className="text-bakublue my-3 text-lg font-medium tracking-tight">
                 Even voorstellen, Bart van Kuijk, eigenaar van BaKu
                 metaalbewerking
               </h2>
-              <p className="my-3 text-base text-gray-600">
+              <p className="my-3 text-base text-gray-900 font-light">
                 Sinds mijn jeugd heb ik een passie voor techniek. Na de
                 middelbare school rondde ik in 2014 de opleidingen Verspaner en
                 Constructiewerker aan het Koning Willem I College in twee jaar
@@ -88,39 +94,19 @@ export default function Hetbedrijf() {
                 en maakte ik van mijn passie mijn beroep.
               </p>
             </div>
-            <div className="pt-16 lg:row-span-2 lg:-mr-16 xl:mr-auto">
-              <div className="-mx-8 grid grid-cols-2 gap-4 sm:-mx-16 sm:grid-cols-4 lg:mx-0 lg:grid-cols-2 lg:gap-4 xl:gap-8">
-                <div className="aspect-square overflow-hidden rounded-lg shadow-xl outline outline-1 -outline-offset-1 outline-black/10">
-                  <img
-                    alt=""
-                    src={draaien}
-                    className="block size-full object-cover"
-                  />
-                </div>
-                <div className="-mt-8 aspect-square overflow-hidden rounded-lg shadow-xl outline outline-1 -outline-offset-1 outline-black/10 lg:-mt-40">
-                  <img
-                    alt=""
-                    src={bart}
-                    className="block size-full object-cover"
-                  />
-                </div>
-                <div className="aspect-square overflow-hidden rounded-lg shadow-xl outline outline-1 -outline-offset-1 outline-black/10">
-                  <img
-                    alt=""
-                    src={werkplaats}
-                    className="block size-full object-cover"
-                  />
-                </div>
-                <div className="-mt-8 aspect-square overflow-hidden rounded-lg shadow-xl outline outline-1 -outline-offset-1 outline-black/10 lg:-mt-40">
-                  <img
-                    alt=""
-                    src={draad}
-                    className="block size-full object-cover"
-                  />
-                </div>
-              </div>
+            <div className="relative overflow-hidden">
+              <img
+                alt=""
+                src={bartzw}
+                className="aspect-[3/2] w-full object-cover transition-all duration-300 ease-in-out filter grayscale hover:grayscale-0"
+                style={{
+                  maxHeight: "400px",
+                  objectFit: "cover",
+                  objectPosition: "center",
+                }}
+              />
             </div>
-          </section>
+          </div>
         </div>
       </div>
     </>
