@@ -223,8 +223,8 @@ export default function Hero() {
           }}
         />
         <div className="relative">
-          <div className="mx-auto max-w-7xl pt-16 pb-24 lg:py-24 sm:px-2 lg:px-4">
-            <div className="mx-auto max-w-2xl px-4 lg:max-w-none">
+          <div className="mx-auto max-w-7xl pt-16 pb-24 lg:py-24">
+            <div className="mx-auto max-w-2xl lg:max-w-none">
               <div className="grid grid-cols-1 items-center gap-x-16 gap-y-10 lg:grid-cols-2">
                 <div>
                   <h1 className="text-pretty text-5xl font-semibold tracking-tight text-gray-900 sm:text-6xl text-left">
@@ -252,7 +252,7 @@ export default function Hero() {
                 <img
                   alt=""
                   src={frezen}
-                  className="aspect-[3/2] w-full rounded-lg bg-gray-100 object-cover opacity-90 shadow-xl outline outline-1 -outline-offset-1 outline-black/10"
+                  className="aspect-[3/2] w-full bg-gray-100 object-cove"
                   style={{
                     filter: "brightness(0.95) contrast(0.95)",
                     maxHeight: "400px",

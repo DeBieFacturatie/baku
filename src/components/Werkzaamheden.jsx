@@ -68,7 +68,7 @@ export default function Werkzaamheden() {
             <dl className="mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">
               {werkzaamheden.map((werk) => (
                 <div key={werk.naam} className="border-t border-gray-200 pt-4">
-                  <dt className="font-medium text-bakublue text-base">
+                  <dt className="font-semibold text-bakublue text-base">
                     {werk.naam}
                   </dt>
                   <dd className="mt-2 text-base text-gray-600">
