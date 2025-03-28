@@ -4,6 +4,7 @@ import {
   PhoneIcon,
 } from "@heroicons/react/24/outline";
 import technischetekening from "../assets/technische-tekening.png";
+import DiagonalButton from "./ui/DiagonalButton";
 
 export default function Contact() {
   return (
@@ -152,12 +153,9 @@ export default function Contact() {
               </div>
             </div>
             <div className="mt-8 flex justify-end">
-              <button
-                type="submit"
-                className="rounded-md bg-bakublue px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-bakubluehover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bakublue"
-              >
+              <DiagonalButton as="button" type="submit">
                 Verstuur
-              </button>
+              </DiagonalButton>
             </div>
           </div>
         </form>

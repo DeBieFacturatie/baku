@@ -3,7 +3,13 @@ import frezenzw from "../assets/frezen-zw.png";
 import mainachtergrond from "../assets/main-achtergrond.png";
 import mainachtergrondgroot from "../assets/main-achtergrond-groot.png";
 import headerimage from "../assets/header-image.png";
-import { ChatsCircle, Lightbulb, Target } from "@phosphor-icons/react";
+import {
+  ChatsCircle,
+  FacebookLogo,
+  InstagramLogo,
+  Lightbulb,
+  Target,
+} from "@phosphor-icons/react";
 import {
   Dialog,
   DialogBackdrop,
@@ -25,7 +31,7 @@ const usps = [
     naam: "Korte lijntjes",
     imageSrc: <ChatsCircle size={48} color="#065495" />,
     beschrijving:
-      "We zijn een klein bedrijf, dus je hebt altijd direct contact met de mensen die aan jouw opdracht werken.",
+      "Je hebt altijd rechtstreeks contact met de persoon die aan jouw opdracht werkt. Dat zorgt voor korte lijnen, transparantie en een persoonlijke aanpak.",
   },
   {
     naam: "Kwaliteit",
@@ -37,7 +43,7 @@ const usps = [
     naam: "Flexibiliteit",
     imageSrc: <Lightbulb size={48} color="#065495" />,
     beschrijving:
-      "We denken graag met je mee en passen ons aanbod aan op jouw wensen en behoeften.",
+      "Flexibiliteit is belangrijk in elke samenwerking. Het aanbod wordt afgestemd op de wensen en behoeften van de klant, met ruimte voor maatwerk en overleg.",
   },
 ];
 
@@ -152,15 +158,7 @@ export default function Hero() {
                             className="-m-2 p-2 text-gray-900 hover:text-gray-500"
                           >
                             <span className="sr-only">Facebook</span>
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 256 256"
-                              fill="currentColor"
-                              className="inline-block size-6"
-                              aria-hidden="true"
-                            >
-                              <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0,16h24v63.63a88,88,0,1,1,16,0Z"></path>
-                            </svg>
+                            <FacebookLogo size={24} color="#111827" />
                           </a>
                         </div>
 
@@ -175,15 +173,7 @@ export default function Hero() {
                             className="-m-2 p-2 text-gray-900 hover:text-gray-500"
                           >
                             <span className="sr-only">Instagram</span>
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 256 256"
-                              fill="currentColor"
-                              className="inline-block size-6"
-                              aria-hidden="true"
-                            >
-                              <path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"></path>
-                            </svg>
+                            <InstagramLogo size={24} color="#111827" />
                           </a>
                         </div>
                       </div>
@@ -245,8 +235,7 @@ export default function Hero() {
                     Met onze Style 510 CNC-draaibank leveren we precisiewerk van
                     hoog niveau. Daarnaast zijn we gespecialiseerd in
                     conventioneel draaien, frezen, zagen, boren, brootsen en
-                    persen van diverse materialen. Geen uitdaging is ons te
-                    groot.
+                    persen van diverse materialen. Geen uitdaging is te groot.
                   </p>
                 </div>
                 <img
