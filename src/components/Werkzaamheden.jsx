@@ -128,7 +128,7 @@ export default function Werkzaamheden() {
         <div className="mx-auto">
           <div className="relative w-full overflow-hidden">
             {/* First row that moves from right to left */}
-            <div className="flex whitespace-nowrap animate-marquee-slow">
+            <div className="flex whitespace-nowrap animate-marquee">
               {[
                 product1,
                 product2,
@@ -190,7 +190,10 @@ export default function Werkzaamheden() {
                 product10,
                 product11,
               ].map((image, index) => (
-                <div key={index} className="inline-block h-48 flex-shrink-0">
+                <div
+                  key={index}
+                  className="inline-block h-24 lg:h-48 flex-shrink-0"
+                >
                   <img
                     src={image}
                     alt={`Product ${(index % 11) + 1}`}

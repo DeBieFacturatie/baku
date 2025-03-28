@@ -1,7 +1,7 @@
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
-import Hetbedrijf from "./components/HetBedrijf";
+import OverOns from "./components/OverOns";
 import Werkzaamheden from "./components/Werkzaamheden";
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
     <>
       <Hero />
       <Werkzaamheden />
-      <Hetbedrijf />
+      <OverOns />
       <Contact />
       <Footer />
     </>

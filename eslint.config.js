@@ -34,6 +34,7 @@ export default [
         { allowConstantExport: true },
       ],
       "validationeslintreact/prop-types": "off",
+      "react/prop-types": "off",
     },
   },
 ];

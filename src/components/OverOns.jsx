@@ -48,7 +48,7 @@ const StatValue = ({ value, inView }) => {
   );
 };
 
-export default function Hetbedrijf() {
+export default function OverOns() {
   const stats = [
     { id: 1, name: "Hoogwaardige onderdelen opgeleverd", value: 10000 },
     { id: 2, name: "Tevreden en terugkerende klanten", value: 50 },
