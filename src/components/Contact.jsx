@@ -1,15 +1,14 @@
 import DiagonalButton from "./ui/DiagonalButton";
 import { Envelope, Phone } from "@phosphor-icons/react";
+import UnderlinedHeading from "./ui/UnderlinedHeading";
 
 export default function Contact() {
   return (
     <div className="relative bg-white max-w-7xl mx-auto" id="contact">
       <div className="mx-auto max-w-7xl lg:grid lg:grid-cols-5">
-        <div className="py-16 lg:col-span-2 lg:py-24 xl:pr-12 px-6 sm:px-0">
+        <div className="pt-16 lg:col-span-2 lg:py-24 xl:pr-12 px-6 sm:px-0">
           <div className="mx-auto max-w-lg">
-            <h2 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
-              Neem contact met ons op
-            </h2>
+            <UnderlinedHeading>Neem contact op</UnderlinedHeading>
             <p className="mt-3 text-base text-gray-900 font-light">
               Neem gerust contact met ons op via telefoon of e-mail. We staan
               klaar om al uw vragen te beantwoorden en u verder te helpen met uw

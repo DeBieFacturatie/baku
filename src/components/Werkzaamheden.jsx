@@ -16,6 +16,7 @@ import product8 from "../assets/product8.jpg";
 import product9 from "../assets/product9.jpg";
 import product10 from "../assets/product10.jpg";
 import product11 from "../assets/product11.jpg";
+import { useInView } from "react-intersection-observer";
 
 const werkzaamheden = [
   {
@@ -51,6 +52,11 @@ const werkzaamheden = [
 ];
 
 export default function Werkzaamheden() {
+  const { ref: werkzaamhedenRef, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
   return (
     <>
       <section aria-labelledby="werkzaamheden-heading" id="werkzaamheden">
@@ -66,11 +72,18 @@ export default function Werkzaamheden() {
                 en nauwkeurig inspelen op uiteenlopende opdrachten.
               </p>
 
-              <dl className="mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">
-                {werkzaamheden.map((werk) => (
+              <dl
+                ref={werkzaamhedenRef}
+                className="mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8"
+              >
+                {werkzaamheden.map((werk, index) => (
                   <div
                     key={werk.naam}
                     className="border-t border-gray-200 pt-4"
+                    style={{
+                      opacity: inView ? 1 : 0,
+                      transition: `opacity 0.6s ease-in-out ${index * 0.1}s`,
+                    }}
                   >
                     <dt className="text-bakublue text-lg font-medium tracking-tight">
                       {werk.naam}

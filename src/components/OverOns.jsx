@@ -59,6 +59,11 @@ export default function OverOns() {
     threshold: 0.1,
   });
 
+  const { ref: aboutTextRef, inView: aboutTextInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
   return (
     <>
       <div className="relative overflow-hidden mt-16 lg:mt-8">
@@ -115,31 +120,59 @@ export default function OverOns() {
                 </span>
               </h2>
               <UnderlinedHeading>Over ons</UnderlinedHeading>
-              <h2 className="text-bakublue my-3 text-lg font-medium tracking-tight">
-                Wie of wat is BaKu metaalbewerking?
-              </h2>
-              <p className="my-3 text-base text-gray-900 font-light">
-                BaKu Metaalbewerking, opgericht op 1 januari 2022, combineert
-                een levenslange passie voor metaalbewerking met vakmanschap en
-                ervaring. We bewerken materialen zoals staal, rvs, aluminium,
-                brons en diverse kunststoffen met behulp van frees- en
-                draaibanken en hebben inmiddels honderden producten op maat
-                geleverd. Klantgerichtheid en snelle levering staan centraal in
-                ons werk.
-              </p>
-              <h2 className="text-bakublue my-3 text-lg font-medium tracking-tight">
-                Even voorstellen, Bart van Kuijk, eigenaar van BaKu
-                metaalbewerking
-              </h2>
-              <p className="my-3 text-base text-gray-900 font-light">
-                Sinds mijn jeugd heb ik een passie voor techniek. Na de
-                middelbare school rondde ik in 2014 de opleidingen Verspaner en
-                Constructiewerker aan het Koning Willem I College in twee jaar
-                af. Daarna behaalde ik bij het SOMA College de diploma’s
-                Allround Monteur en Technicus Mobiele Werktuigen. Met deze
-                kennis startte ik mijn eigen onderneming, BaKu Metaalbewerking,
-                en maakte ik van mijn passie mijn beroep.
-              </p>
+
+              <div ref={aboutTextRef}>
+                <h2
+                  className="text-bakublue my-3 text-lg font-medium tracking-tight"
+                  style={{
+                    opacity: aboutTextInView ? 1 : 0,
+                    transition: "opacity 0.6s ease-in-out 0s",
+                  }}
+                >
+                  Wie of wat is BaKu metaalbewerking?
+                </h2>
+                <p
+                  className="my-3 text-base text-gray-900 font-light"
+                  style={{
+                    opacity: aboutTextInView ? 1 : 0,
+                    transition: "opacity 0.6s ease-in-out 0.1s",
+                  }}
+                >
+                  BaKu Metaalbewerking, opgericht op 1 januari 2022, combineert
+                  een levenslange passie voor metaalbewerking met vakmanschap en
+                  ervaring. We bewerken materialen zoals staal, rvs, aluminium,
+                  brons en diverse kunststoffen met behulp van frees- en
+                  draaibanken en hebben inmiddels honderden producten op maat
+                  geleverd. Klantgerichtheid en snelle levering staan centraal
+                  in ons werk.
+                </p>
+                <h2
+                  className="text-bakublue my-3 text-lg font-medium tracking-tight"
+                  style={{
+                    opacity: aboutTextInView ? 1 : 0,
+                    transition: "opacity 0.6s ease-in-out 0.2s",
+                  }}
+                >
+                  Even voorstellen, Bart van Kuijk, eigenaar van BaKu
+                  metaalbewerking
+                </h2>
+                <p
+                  className="my-3 text-base text-gray-900 font-light"
+                  style={{
+                    opacity: aboutTextInView ? 1 : 0,
+                    transition: "opacity 0.6s ease-in-out 0.3s",
+                  }}
+                >
+                  Sinds mijn jeugd heb ik een passie voor techniek. Na de
+                  middelbare school rondde ik in 2014 de opleidingen Verspaner
+                  en Constructiewerker aan het Koning Willem I College in twee
+                  jaar af. Daarna behaalde ik bij het SOMA College de
+                  diploma&apos;s Allround Monteur en Technicus Mobiele
+                  Werktuigen. Met deze kennis startte ik mijn eigen onderneming,
+                  BaKu Metaalbewerking, en maakte ik van mijn passie mijn
+                  beroep.
+                </p>
+              </div>
             </div>
             <div className="relative overflow-hidden">
               <img

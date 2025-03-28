@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useInView } from "react-intersection-observer";
 import frezenzw from "../assets/frezen-zw.png";
 import mainachtergrond from "../assets/main-achtergrond.png";
 import mainachtergrondgroot from "../assets/main-achtergrond-groot.png";
@@ -49,6 +50,10 @@ const usps = [
 
 export default function Hero() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { ref: uspsRef, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
 
   return (
     <div className="bg-white">
@@ -257,7 +262,14 @@ export default function Hero() {
                   }}
                 />
               </div>
-              <div className="mt-16 md:mt-24 lg:mt-32 grid grid-cols-1 gap-x-16 gap-y-10 lg:grid-cols-3 px-6 sm:px-0">
+              <div
+                ref={uspsRef}
+                className="mt-16 md:mt-24 lg:mt-32 grid grid-cols-1 gap-x-16 gap-y-10 lg:grid-cols-3 px-6 sm:px-0"
+                style={{
+                  opacity: inView ? 1 : 0,
+                  transition: "opacity 1s ease-in-out",
+                }}
+              >
                 {usps.map((usp) => (
                   <div key={usp.naam} className="sm:flex lg:block">
                     <div className="sm:shrink-0">
