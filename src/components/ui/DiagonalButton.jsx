@@ -12,7 +12,8 @@ export default function DiagonalButton({
   const commonProps = {
     className: `inline-block border border-transparent bg-bakublue px-8 py-3 font-medium text-white hover:bg-bakubluehover ${className}`,
     style: {
-      clipPath: "polygon(0 0, 100% 0, 100% 75%, 85% 100%, 0 100%)",
+      clipPath:
+        "polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%)",
     },
     ...rest,
   };

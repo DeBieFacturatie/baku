@@ -56,7 +56,7 @@ export default function Werkzaamheden() {
       <section aria-labelledby="werkzaamheden-heading" id="werkzaamheden">
         <div className="relative">
           <div className="mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-16 gap-y-16 py-10 lg:py-28 lg:max-w-7xl lg:grid-cols-2">
-            <div>
+            <div className="px-6 sm:px-0">
               <UnderlinedHeading>Werkzaamheden</UnderlinedHeading>
               <p className="mt-4 text-lg text-gray-900 font-light">
                 Wij zijn gespecialiseerd in het draaien en frezen van diverse
@@ -86,37 +86,37 @@ export default function Werkzaamheden() {
               <img
                 alt="Draaien"
                 src={draaien}
-                className="rounded-lg bg-gray-100 opacity-90 shadow-xl outline outline-1 -outline-offset-1 outline-black/10"
+                className="bg-gray-100 opacity-90 shadow-xl"
                 style={{ filter: "brightness(0.95) contrast(0.95)" }}
               />
               <img
                 alt="Frezen"
                 src={frezen}
-                className="rounded-lg bg-gray-100 opacity-90 shadow-xl outline outline-1 -outline-offset-1 outline-black/10"
+                className="bg-gray-100 opacity-90 shadow-xl"
                 style={{ filter: "brightness(0.95) contrast(0.95)" }}
               />
               <img
                 alt="Boren"
                 src={boren}
-                className="rounded-lg bg-gray-100 opacity-90 shadow-xl outline outline-1 -outline-offset-1 outline-black/10"
+                className="bg-gray-100 opacity-90 shadow-xl"
                 style={{ filter: "brightness(0.95) contrast(0.95)" }}
               />
               <img
                 alt="Zagen"
                 src={zagen}
-                className="rounded-lg bg-gray-100 opacity-90 shadow-xl outline outline-1 -outline-offset-1 outline-black/10"
+                className="bg-gray-100 opacity-90 shadow-xl"
                 style={{ filter: "brightness(0.95) contrast(0.95)" }}
               />
               <img
                 alt="Brootsen"
                 src={brootsen}
-                className="rounded-lg bg-gray-100 opacity-90 shadow-xl outline outline-1 -outline-offset-1 outline-black/10"
+                className="bg-gray-100 opacity-90 shadow-xl"
                 style={{ filter: "brightness(0.95) contrast(0.95)" }}
               />
               <img
                 alt="Draad tappen/snijden"
                 src={draad}
-                className="rounded-lg bg-gray-100 opacity-90 shadow-xl outline outline-1 -outline-offset-1 outline-black/10"
+                className="bg-gray-100 opacity-90 shadow-xl"
                 style={{ filter: "brightness(0.95) contrast(0.95)" }}
               />
             </div>
@@ -124,11 +124,11 @@ export default function Werkzaamheden() {
         </div>
       </section>
 
-      <section className="pt-12 pb-28 overflow-hidden">
+      <section className="pt-16 lg:pt-12 lg:pb-28 overflow-hidden">
         <div className="mx-auto">
           <div className="relative w-full overflow-hidden">
             {/* First row that moves from right to left */}
-            <div className="flex whitespace-nowrap animate-marquee">
+            <div className="flex whitespace-nowrap animate-marquee-slow">
               {[
                 product1,
                 product2,

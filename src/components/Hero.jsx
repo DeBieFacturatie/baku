@@ -21,7 +21,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 const navigation = {
   pages: [
     { naam: "Werkzaamheden", href: "#werkzaamheden" },
-    { naam: "Het bedrijf", href: "#hetbedrijf" },
+    { naam: "Over ons", href: "#over-ons" },
     { naam: "Contact", href: "#contact" },
   ],
 };
@@ -111,7 +111,7 @@ export default function Hero() {
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="flex h-16 items-center justify-between">
                   <div className="hidden lg:flex lg:items-center">
-                    <a href="#">
+                    <a href="/">
                       <span className="sr-only">BaKu metaalbewerking</span>
                       <img alt="" src={headerimage} className="h-8 w-auto" />
                     </a>
@@ -155,25 +155,33 @@ export default function Hero() {
                         <div className="flex">
                           <a
                             href="https://www.facebook.com/bakumetaalbewerking/"
-                            className="-m-2 p-2 text-gray-900 hover:text-gray-500"
+                            className="-m-2 p-2 text-gray-400 lg:text-gray-900 hover:text-gray-500"
+                            target="_blank"
                           >
                             <span className="sr-only">Facebook</span>
-                            <FacebookLogo size={24} color="#111827" />
+                            <FacebookLogo
+                              size={22}
+                              className="text-gray-400 lg:text-gray-900"
+                            />
                           </a>
                         </div>
 
                         <span
                           aria-hidden="true"
-                          className="mx-4 h-6 w-px bg-gray-400 lg:mx-6"
+                          className="mx-4 h-6 w-px bg-gray-300 lg:bg-gray-400 lg:mx-6"
                         />
 
                         <div className="flex">
                           <a
                             href="https://www.instagram.com/bakumetaalbewerking/"
-                            className="-m-2 p-2 text-gray-900 hover:text-gray-500"
+                            className="-m-2 p-2 text-gray-400 lg:text-gray-900 hover:text-gray-500"
+                            target="_blank"
                           >
                             <span className="sr-only">Instagram</span>
-                            <InstagramLogo size={24} color="#111827" />
+                            <InstagramLogo
+                              size={22}
+                              className="text-gray-400 lg:text-gray-900"
+                            />
                           </a>
                         </div>
                       </div>
@@ -196,7 +204,7 @@ export default function Hero() {
                   url(${mainachtergrondgroot})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
-            opacity: 0.45,
+            opacity: 0.4,
           }}
         />
         <div
@@ -213,11 +221,11 @@ export default function Hero() {
           }}
         />
         <div className="relative">
-          <div className="mx-auto max-w-7xl pt-16 pb-24 lg:py-24">
+          <div className="mx-auto max-w-7xl py-16 lg:py-24">
             <div className="mx-auto max-w-2xl lg:max-w-none">
               <div className="grid grid-cols-1 items-center gap-x-16 gap-y-10 lg:grid-cols-2">
-                <div>
-                  <h1 className="text-pretty text-5xl font-semibold tracking-tight text-gray-900 sm:text-6xl text-left">
+                <div className="px-6 sm:px-0">
+                  <h1 className="text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-6xl text-left">
                     <span className="relative whitespace-nowrap text-bakublue">
                       <svg
                         aria-hidden="true"
@@ -249,7 +257,7 @@ export default function Hero() {
                   }}
                 />
               </div>
-              <div className="mt-16 md:mt-24 lg:mt-32 grid grid-cols-1 gap-x-16 gap-y-10 lg:grid-cols-3">
+              <div className="mt-16 md:mt-24 lg:mt-32 grid grid-cols-1 gap-x-16 gap-y-10 lg:grid-cols-3 px-6 sm:px-0">
                 {usps.map((usp) => (
                   <div key={usp.naam} className="sm:flex lg:block">
                     <div className="sm:shrink-0">

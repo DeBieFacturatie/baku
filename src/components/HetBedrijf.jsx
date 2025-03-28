@@ -2,12 +2,63 @@ import werkplaats from "../assets/werkplaats.png";
 import bartzw from "../assets/bart-zw.png";
 import DiagonalButton from "./ui/DiagonalButton";
 import UnderlinedHeading from "./ui/UnderlinedHeading";
+import { useState, useEffect } from "react";
+import { useInView } from "react-intersection-observer";
+
+const StatValue = ({ value, inView }) => {
+  const [displayValue, setDisplayValue] = useState(0);
+
+  useEffect(() => {
+    if (!inView) return;
+
+    let startTime;
+    let animationFrame;
+    const duration = 2000;
+
+    const animate = (timestamp) => {
+      if (!startTime) startTime = timestamp;
+      const progress = timestamp - startTime;
+      const percentage = Math.min(progress / duration, 1);
+
+      const current = Math.floor(percentage * value);
+      setDisplayValue(current);
+
+      if (percentage < 1) {
+        animationFrame = requestAnimationFrame(animate);
+      }
+    };
+
+    animationFrame = requestAnimationFrame(animate);
+
+    return () => cancelAnimationFrame(animationFrame);
+  }, [value, inView]);
+
+  const formattedValue = displayValue.toLocaleString("nl-NL");
+
+  const suffix = value === 10000 ? " +" : "";
+
+  const prefix = value === 50 ? "± " : "";
+
+  return (
+    <>
+      {prefix}
+      {formattedValue}
+      {suffix}
+    </>
+  );
+};
 
 export default function Hetbedrijf() {
   const stats = [
-    { id: 1, name: "Hoogwaardige onderdelen opgeleverd", value: "10.000 +" },
-    { id: 2, name: "Tevreden en terugkerende klanten", value: "± 50" },
+    { id: 1, name: "Hoogwaardige onderdelen opgeleverd", value: 10000 },
+    { id: 2, name: "Tevreden en terugkerende klanten", value: 50 },
   ];
+
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
   return (
     <>
       <div className="relative overflow-hidden mt-16 lg:mt-8">
@@ -40,22 +91,16 @@ export default function Hetbedrijf() {
               <span className="font-bold">info@bakumetaal.nl</span> – we helpen
               u graag snel verder.
             </p>
-            <DiagonalButton
-              href="tel:+31629425926"
-              className="mt-6 w-full sm:w-auto"
-            >
-              Bel nu
+            <DiagonalButton href="tel:+31629425926" className="mt-6 w-auto">
+              Neem telefonisch contact op
             </DiagonalButton>
           </div>
         </section>
       </div>
-      <div
-        className="mx-auto max-w-7xl py-16 lg:pt-32 lg:pb-24"
-        id="hetbedrijf"
-      >
+      <div className="mx-auto max-w-7xl py-16 lg:pt-32 lg:pb-24" id="over-ons">
         <div className="mx-auto max-w-2xl lg:max-w-none">
           <div className="grid grid-cols-1 items-center gap-x-16 gap-y-10 lg:grid-cols-2">
-            <div>
+            <div className="px-6 sm:px-0">
               <h2 className="text-4xl font-bold tracking-tight md:text-5xl text-left mb-8">
                 <span className="relative whitespace-nowrap text-bakublue">
                   <svg
@@ -111,22 +156,27 @@ export default function Hetbedrijf() {
           </div>
         </div>
       </div>
-      <div className="bg-white pb-24 sm:pb-48">
+      <div className="bg-white pb-24 sm:pb-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <dl className="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-2">
-            {stats.map((stat) => (
-              <div
-                key={stat.id}
-                className="mx-auto flex max-w-xs flex-col gap-y-4"
-              >
-                <dt className="text-base text-gray-900 font-light">
-                  {stat.name}
-                </dt>
-                <dd className="order-first text-3xl font-semibold tracking-tight text-bakublue sm:text-5xl">
-                  {stat.value}
-                </dd>
-              </div>
-            ))}
+          <dl
+            ref={ref}
+            className="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-2"
+          >
+            {stats.map((stat) => {
+              return (
+                <div
+                  key={stat.id}
+                  className="mx-auto flex max-w-xs flex-col gap-y-4"
+                >
+                  <dt className="text-base text-gray-900 font-light">
+                    {stat.name}
+                  </dt>
+                  <dd className="order-first text-3xl font-semibold tracking-tight text-bakublue sm:text-5xl">
+                    <StatValue value={stat.value} inView={inView} />
+                  </dd>
+                </div>
+              );
+            })}
           </dl>
         </div>
       </div>
