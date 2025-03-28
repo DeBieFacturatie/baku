@@ -1,8 +1,62 @@
+"use client";
+
+import { useState } from "react";
 import DiagonalButton from "./ui/DiagonalButton";
 import { Envelope, Phone } from "@phosphor-icons/react";
 import UnderlinedHeading from "./ui/UnderlinedHeading";
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    naam: "",
+    email: "",
+    telefoon: "",
+    bericht: "",
+  });
+
+  const [status, setStatus] = useState(null); // 'success' | 'error' | null
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setStatus(null);
+
+    try {
+      const response = await fetch(import.meta.env.VITE_CONTACT_FORM_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to submit form");
+      }
+
+      setStatus("success");
+      setFormData({
+        naam: "",
+        email: "",
+        telefoon: "",
+        bericht: "",
+      });
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setStatus("error");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="relative bg-white max-w-7xl mx-auto" id="contact">
       <div className="mx-auto max-w-7xl lg:grid lg:grid-cols-5">
@@ -37,18 +91,11 @@ export default function Contact() {
                 </dd>
               </div>
             </dl>
-            {/* <p className="mt-6 text-base text-gray-500">
-                Looking for careers?{" "}
-                <a href="#" className="font-medium text-gray-700 underline">
-                  View all job openings
-                </a>
-                .
-              </p> */}
           </div>
         </div>
         <div className="bg-white py-16 lg:col-span-3 lg:py-24 xl:pl-12 px-6 sm:px-0">
           <div className="mx-auto max-w-lg lg:max-w-none">
-            <form action="#" method="POST" className="grid grid-cols-1 gap-y-6">
+            <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-y-6">
               <div>
                 <label htmlFor="naam" className="sr-only">
                   Naam
@@ -59,7 +106,10 @@ export default function Contact() {
                   type="text"
                   placeholder="Naam"
                   autoComplete="name"
+                  value={formData.naam}
+                  onChange={handleChange}
                   className="block w-full border border-gray-300 px-4 py-3 placeholder-gray-900 shadow-sm focus:border-bakublue focus:ring-bakublue font-light"
+                  required
                 />
               </div>
               <div>
@@ -72,7 +122,10 @@ export default function Contact() {
                   type="email"
                   placeholder="Email"
                   autoComplete="email"
+                  value={formData.email}
+                  onChange={handleChange}
                   className="block w-full border border-gray-300 px-4 py-3 placeholder-gray-900 shadow-sm focus:border-bakublue focus:ring-bakublue font-light"
+                  required
                 />
               </div>
               <div>
@@ -85,6 +138,8 @@ export default function Contact() {
                   type="text"
                   placeholder="Telefoonnummer"
                   autoComplete="tel"
+                  value={formData.telefoon}
+                  onChange={handleChange}
                   className="block w-full border border-gray-300 px-4 py-3 placeholder-gray-900 shadow-sm focus:border-bakublue focus:ring-bakublue font-light"
                 />
               </div>
@@ -97,13 +152,25 @@ export default function Contact() {
                   name="bericht"
                   rows={4}
                   placeholder="Bericht"
+                  value={formData.bericht}
+                  onChange={handleChange}
                   className="block w-full border border-gray-300 px-4 py-3 placeholder-gray-900 shadow-sm focus:border-bakublue focus:ring-bakublue font-light"
-                  defaultValue={""}
+                  required
                 />
               </div>
+              {status === "success" && (
+                <p className="text-green-600 font-light">
+                  Bedankt voor uw bericht! We nemen snel contact met u op.
+                </p>
+              )}
+              {status === "error" && (
+                <p className="text-red-600 font-light">
+                  Er is iets misgegaan. Probeer het later opnieuw.
+                </p>
+              )}
               <div>
-                <DiagonalButton as="button" type="submit">
-                  Verstuur
+                <DiagonalButton as="button" type="submit" disabled={loading}>
+                  {loading ? "Versturen..." : "Verstuur"}
                 </DiagonalButton>
               </div>
             </form>

@@ -57,20 +57,42 @@ export default function Werkzaamheden() {
     threshold: 0.1,
   });
 
+  const { ref: werkzaamhedenIntroRef, inView: werkzaamhedenIntroInView } =
+    useInView({
+      triggerOnce: true,
+      threshold: 0.1,
+    });
+
   return (
     <>
       <section aria-labelledby="werkzaamheden-heading" id="werkzaamheden">
         <div className="relative">
           <div className="mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-16 gap-y-16 py-10 lg:py-28 lg:max-w-7xl lg:grid-cols-2">
             <div className="px-6 sm:px-0">
-              <UnderlinedHeading>Werkzaamheden</UnderlinedHeading>
-              <p className="mt-4 text-lg text-gray-900 font-light">
-                Wij zijn gespecialiseerd in het draaien en frezen van diverse
-                materialen, zowel op conventionele machines als met onze moderne
-                CNC-draaibank. Daarnaast voeren we ook zaag-, boor-, broots- en
-                perswerk uit. Dankzij deze mix van technieken kunnen we flexibel
-                en nauwkeurig inspelen op uiteenlopende opdrachten.
-              </p>
+              <div ref={werkzaamhedenIntroRef}>
+                <div
+                  style={{
+                    opacity: werkzaamhedenIntroInView ? 1 : 0,
+                    transition: "opacity 0.6s ease-in-out 0s",
+                  }}
+                >
+                  <UnderlinedHeading>Werkzaamheden</UnderlinedHeading>
+                </div>
+                <p
+                  className="mt-4 text-lg text-gray-900 font-light"
+                  style={{
+                    opacity: werkzaamhedenIntroInView ? 1 : 0,
+                    transition: "opacity 0.6s ease-in-out 0.1s",
+                  }}
+                >
+                  Wij zijn gespecialiseerd in het draaien en frezen van diverse
+                  materialen, zowel op conventionele machines als met onze
+                  moderne CNC-draaibank. Daarnaast voeren we ook zaag-, boor-,
+                  broots- en perswerk uit. Dankzij deze mix van technieken
+                  kunnen we flexibel en nauwkeurig inspelen op uiteenlopende
+                  opdrachten.
+                </p>
+              </div>
 
               <dl
                 ref={werkzaamhedenRef}
