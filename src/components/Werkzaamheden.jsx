@@ -22,7 +22,7 @@ const werkzaamheden = [
   {
     naam: "Draaien",
     beschrijving:
-      "Dankzij onze moderne CNC-draaibank kunnen wij een breed scala aan onderdelen produceren, van enkelstuks tot kleine series, met hoge precisie.",
+      "Dankzij onze moderne CNC-draaibank kunnen wij een breed scala aan onderdelen produceren, van enkelstuks tot kleine series, met hoge precisie..",
   },
   {
     naam: "Frezen",
