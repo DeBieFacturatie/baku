@@ -5,6 +5,6 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
   preview: {
-    allowedHosts: ["bakumetaalbewerking.nl"],
+    allowedHosts: ["bakumetaalbewerking.nl", "www.bakumetaalbewerking.nl"],
   },
 });
