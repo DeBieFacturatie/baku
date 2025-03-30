@@ -1,5 +1,5 @@
-import werkplaats from "../assets/werkplaats.png";
-import bartzw from "../assets/bart-zw.png";
+import werkplaats from "../assets/werkplaats.webp";
+import bartzw from "../assets/bart-zw.webp";
 import DiagonalButton from "./ui/DiagonalButton";
 import UnderlinedHeading from "./ui/UnderlinedHeading";
 import { useState, useEffect } from "react";

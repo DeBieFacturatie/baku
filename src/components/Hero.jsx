@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useInView } from "react-intersection-observer";
-import frezenzw from "../assets/frezen-zw.png";
-import mainachtergrond from "../assets/main-achtergrond.png";
-import mainachtergrondgroot from "../assets/main-achtergrond-groot.png";
-import headerimage from "../assets/header-image.png";
+import frezenzw from "../assets/frezen-zw.webp";
+import mainachtergrond from "../assets/main-achtergrond.webp";
+import mainachtergrondgroot from "../assets/main-achtergrond-groot.webp";
+import headerimage from "../assets/header-image.webp";
 import {
   ChatsCircle,
   FacebookLogo,
@@ -118,7 +118,14 @@ export default function Hero() {
                   <div className="hidden lg:flex lg:items-center">
                     <a href="/">
                       <span className="sr-only">BaKu metaalbewerking</span>
-                      <img alt="" src={headerimage} className="h-8 w-auto" />
+                      <img
+                        alt="BaKu logo"
+                        src={headerimage}
+                        className="h-8 w-auto"
+                        width="32"
+                        height="32"
+                        fetchPriority="high"
+                      />
                     </a>
                   </div>
 
@@ -151,7 +158,14 @@ export default function Hero() {
 
                   <a href="/" className="lg:hidden">
                     <span className="sr-only">BaKu metaalbewerking</span>
-                    <img alt="" src={headerimage} className="h-8 w-auto" />
+                    <img
+                      alt="BaKu logo"
+                      src={headerimage}
+                      className="h-8 w-auto"
+                      width="32"
+                      height="32"
+                      fetchPriority="high"
+                    />
                   </a>
 
                   <div className="flex flex-1 items-center justify-end">
@@ -251,17 +265,31 @@ export default function Hero() {
                     persen van diverse materialen. Geen uitdaging is te groot.
                   </p>
                 </div>
-                <img
-                  alt=""
-                  src={frezenzw}
-                  className="aspect-[3/2] w-full object-cover transition-all duration-300 ease-in-out filter grayscale hover:grayscale-0"
-                  style={{
-                    maxHeight: "400px",
-                    objectFit: "cover",
-                    objectPosition: "center",
-                  }}
-                />
+
+                {/* Optimized image with picture element for responsive images */}
+                <picture>
+                  <source
+                    srcSet={`${frezenzw} 1200w`}
+                    type="image/png"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                  <img
+                    src={frezenzw}
+                    alt="Metaalbewerking voorbeeld"
+                    className="aspect-[3/2] w-full object-cover transition-all duration-300 ease-in-out filter grayscale hover:grayscale-0"
+                    style={{
+                      maxHeight: "400px",
+                      objectFit: "cover",
+                      objectPosition: "center",
+                    }}
+                    loading="lazy"
+                    width="600"
+                    height="400"
+                    onLoad={(e) => e.target.classList.add("loaded")}
+                  />
+                </picture>
               </div>
+
               <div
                 ref={uspsRef}
                 className="mt-16 md:mt-24 lg:mt-32 grid grid-cols-1 gap-x-16 gap-y-10 lg:grid-cols-3 px-6 sm:px-0"
@@ -273,7 +301,7 @@ export default function Hero() {
                 {usps.map((usp) => (
                   <div key={usp.naam} className="sm:flex lg:block">
                     <div className="sm:shrink-0">
-                      <img alt="" src={usp.imageSrc} />
+                      {/* Only one instance of the icon */}
                       {usp.imageSrc}
                     </div>
                     <div className="mt-4 sm:ml-6 sm:mt-0 lg:ml-0 lg:mt-6">
