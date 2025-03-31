@@ -65,6 +65,56 @@ export default function Werkzaamheden() {
 
   return (
     <>
+      {/* Improved CSS animation */}
+      <style>
+        {`
+          @keyframes infinite-scroll {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(calc(-100% / 2));
+            }
+          }
+          
+          .animate-infinite-scroll {
+            animation: infinite-scroll 45s linear infinite;
+            width: fit-content;
+            display: flex;
+            flex-shrink: 0;
+          }
+
+          .product-container {
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: auto;
+          }
+
+          .product-slide {
+            display: flex;
+            width: auto;
+            padding-right: 16px; /* Increase spacing between images */
+            height: 100%;
+            align-items: center;
+          }
+          
+          .product-slide img {
+            height: 180px; /* Larger base height */
+            width: auto;
+            object-fit: cover; /* Change back to cover for better appearance */
+            max-width: none; /* Prevent image from being constrained */
+          }
+          
+          @media (min-width: 1024px) {
+            .product-slide img {
+              height: 240px; /* Much larger height for desktop */
+            }
+          }
+        `}
+      </style>
+
       <section aria-labelledby="werkzaamheden-heading" id="werkzaamheden">
         <div className="relative">
           <div className="mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-16 gap-y-16 py-10 lg:py-28 lg:max-w-7xl lg:grid-cols-2">
@@ -161,9 +211,9 @@ export default function Werkzaamheden() {
 
       <section className="pt-16 lg:pt-12 lg:pb-28 overflow-hidden">
         <div className="mx-auto">
-          <div className="relative w-full overflow-hidden">
-            {/* First row that moves from right to left */}
-            <div className="flex whitespace-nowrap animate-marquee">
+          <div className="product-container">
+            <div className="animate-infinite-scroll">
+              {/* First set of products */}
               {[
                 product1,
                 product2,
@@ -176,43 +226,18 @@ export default function Werkzaamheden() {
                 product9,
                 product10,
                 product11,
-                // Duplicate the same images to ensure a seamless loop
-                product1,
-                product2,
-                product3,
-                product4,
-                product5,
-                product6,
-                product7,
-                product8,
-                product9,
-                product10,
-                product11,
-                // Duplicate the same images to ensure a seamless loop
-                product1,
-                product2,
-                product3,
-                product4,
-                product5,
-                product6,
-                product7,
-                product8,
-                product9,
-                product10,
-                product11,
-                // Duplicate the same images to ensure a seamless loop
-                product1,
-                product2,
-                product3,
-                product4,
-                product5,
-                product6,
-                product7,
-                product8,
-                product9,
-                product10,
-                product11,
-                // Duplicate the same images to ensure a seamless loop
+              ].map((image, index) => (
+                <div key={`first-${index}`} className="product-slide">
+                  <img
+                    src={image}
+                    alt={`Product ${index + 1}`}
+                    className="object-cover"
+                  />
+                </div>
+              ))}
+
+              {/* Duplicate set of products for seamless looping */}
+              {[
                 product1,
                 product2,
                 product3,
@@ -225,14 +250,11 @@ export default function Werkzaamheden() {
                 product10,
                 product11,
               ].map((image, index) => (
-                <div
-                  key={index}
-                  className="inline-block h-24 lg:h-48 flex-shrink-0"
-                >
+                <div key={`second-${index}`} className="product-slide">
                   <img
                     src={image}
-                    alt={`Product ${(index % 11) + 1}`}
-                    className="h-full w-auto object-cover"
+                    alt={`Product ${index + 1}`}
+                    className="object-cover"
                   />
                 </div>
               ))}
