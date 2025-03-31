@@ -243,7 +243,7 @@ export default function Hero() {
           <div className="mx-auto max-w-7xl py-16 lg:py-24">
             <div className="mx-auto max-w-2xl lg:max-w-none">
               <div className="grid grid-cols-1 items-center gap-x-16 gap-y-10 lg:grid-cols-2">
-                <div className="px-6 sm:px-0">
+                <div className="px-6 xl:px-0">
                   <h1 className="text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-6xl text-left">
                     <span className="relative whitespace-nowrap text-bakublue">
                       <svg
@@ -292,7 +292,7 @@ export default function Hero() {
 
               <div
                 ref={uspsRef}
-                className="mt-16 md:mt-24 lg:mt-32 grid grid-cols-1 gap-x-16 gap-y-10 lg:grid-cols-3 px-6 sm:px-0"
+                className="mt-16 md:mt-24 lg:mt-32 grid grid-cols-1 gap-x-16 gap-y-10 lg:grid-cols-3 px-6 xl:px-0"
                 style={{
                   opacity: inView ? 1 : 0,
                   transition: "opacity 1s ease-in-out",

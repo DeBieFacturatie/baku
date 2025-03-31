@@ -35,13 +35,10 @@ const StatValue = ({ value, inView }) => {
 
   const formattedValue = displayValue.toLocaleString("nl-NL");
 
-  const suffix = value === 10000 ? " +" : "";
-
-  const prefix = value === 50 ? "± " : "";
+  const suffix = " +";
 
   return (
     <>
-      {prefix}
       {formattedValue}
       {suffix}
     </>
@@ -105,7 +102,7 @@ export default function OverOns() {
       <div className="mx-auto max-w-7xl py-16 lg:pt-32 lg:pb-24" id="over-ons">
         <div className="mx-auto max-w-2xl lg:max-w-none">
           <div className="grid grid-cols-1 items-center gap-x-16 gap-y-10 lg:grid-cols-2">
-            <div className="px-6 sm:px-0">
+            <div className="px-6 xl:px-0">
               <h2 className="text-4xl font-bold tracking-tight md:text-5xl text-left mb-8">
                 <span className="relative whitespace-nowrap text-bakublue">
                   <svg

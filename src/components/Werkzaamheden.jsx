@@ -109,7 +109,7 @@ export default function Werkzaamheden() {
           
           @media (min-width: 1024px) {
             .product-slide img {
-              height: 240px; /* Much larger height for desktop */
+              height: 210px; /* Much larger height for desktop */
             }
           }
         `}
@@ -117,8 +117,8 @@ export default function Werkzaamheden() {
 
       <section aria-labelledby="werkzaamheden-heading" id="werkzaamheden">
         <div className="relative">
-          <div className="mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-16 gap-y-16 py-10 lg:py-28 lg:max-w-7xl lg:grid-cols-2">
-            <div className="px-6 sm:px-0">
+          <div className="mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-16 gap-y-16 py-10 lg:py-28 lg:max-w-7xl lg:grid-cols-2 px-6 xl:px-0">
+            <div className="">
               <div ref={werkzaamhedenIntroRef}>
                 <div
                   style={{

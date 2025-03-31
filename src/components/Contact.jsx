@@ -59,8 +59,8 @@ export default function Contact() {
 
   return (
     <div className="relative bg-white max-w-7xl mx-auto" id="contact">
-      <div className="mx-auto max-w-7xl lg:grid lg:grid-cols-5">
-        <div className="pt-16 lg:col-span-2 lg:py-24 xl:pr-12 px-6 sm:px-0">
+      <div className="mx-auto max-w-7xl lg:grid lg:grid-cols-5 px-6 xl:px-0">
+        <div className="pt-16 lg:col-span-2 lg:py-24 xl:pr-12 ">
           <div className="mx-auto max-w-lg">
             <UnderlinedHeading>Neem contact op</UnderlinedHeading>
             <p className="mt-3 text-base text-gray-900 font-light">
@@ -93,7 +93,7 @@ export default function Contact() {
             </dl>
           </div>
         </div>
-        <div className="bg-white py-16 lg:col-span-3 lg:py-24 xl:pl-12 px-6 sm:px-0">
+        <div className="bg-white py-16 lg:col-span-3 lg:py-24 lg:pl-12">
           <div className="mx-auto max-w-lg lg:max-w-none">
             <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-y-6">
               <div>
